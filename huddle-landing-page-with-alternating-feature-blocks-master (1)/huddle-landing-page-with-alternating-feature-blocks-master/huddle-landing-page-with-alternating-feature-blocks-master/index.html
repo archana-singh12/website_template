@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <title>Frontend Mentor | Huddle landing page with alternating feature blocks</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #EBFBFF;
+      background-image: url(./images/bg-hero-desktop.svg);
+      font-family: "Poppins", sans-serif;
+      font-family: "Open Sans", sans-serif;
+
+    }
+
+    header {
+      padding: 40px;
+      /* display: flex; */
+      align-items: center;
+    }
+
+    .btn {
+      cursor: pointer;
+      background-color: #fff;
+      border-radius: 50px;
+      color: #00252E;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      height: 45px;
+      width: 200px;
+      border: 0px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .row1 {
+      padding: 60px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .box1 {
+      padding: 0px 60px 0px 15px;
+      width: 70%;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #00252E;
+      line-height: 1.5em;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.5em;
+      color: #00252E;
+    }
+
+    .btn1 {
+      cursor: pointer;
+      background-color: #FF52BF;
+      border-radius: 50px;
+      color: #EBFBFF;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      height: 45px;
+      width: 200px;
+      border: 0px;
+      box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+      margin-top: 30px;
+      letter-spacing: 0.05em;
+      font-size: 14px;
+    }
+
+    .box2 {
+      padding: 0px 15px;
+      width: 90%;
+    }
+
+    .box2 img {
+      width: 100%;
+    }
+
+    .row2 {
+      padding: 150px 80px 110px 80px;
+      background-color: #fff;
+    }
+
+    .container1 {
+      padding: 40px 40px 40px 80px;
+      box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .container1 .col1 {
+      width: 100%;
+      padding: 0 100px 0 15px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #00252E;
+      line-height: 1.5em;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .container1 .col1 p {
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.5em;
+      color: #808D99;
+    }
+
+    .container1 .col2 {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .container1 .col2 img {
+      width: 100%;
+
+    }
+
+    .container2 {
+      padding: 40px 40px 40px 80px;
+      box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .container2 .col4 {
+      width: 100%;
+      padding: 0 15px 0 100px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #00252E;
+      line-height: 1.5em;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .container2 .col4 p {
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.5em;
+      color: #808D99;
+    }
+
+    .container2 .col3 {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .container2 .col3 img {
+      width: 100%;
+
+    }
+
+    .container3 {
+      padding: 40px 40px 40px 80px;
+      box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .container3 .col1 {
+      width: 100%;
+      padding: 0 100px 0 15px;
+    }
+
+    h2 {
+      font-size: 32px;
+      color: #00252E;
+      line-height: 1.5em;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .container3 .col1 p {
+      font-size: 18px;
+      font-weight: 500;
+      font-family: "Open Sans", sans-serif;
+      line-height: 1.5em;
+      color: #808D99;
+    }
+
+    .container3 .col2 {
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .container3 .col2 img {
+      width: 100%;
+
+    }
+
+    .row3 {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container4 {
+      width: 45%;
+      padding: 50px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+      margin-bottom: -80px;
+    }
+
+    .container4 h2 {
+      font-size: 32px;
+      color: #00252E;
+      line-height: 1.5em;
+      font-family: "Poppins", sans-serif;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .center {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+    }
+
+    .center .btn1 {
+      cursor: pointer;
+      background-color: #FF52BF;
+      border-radius: 50px;
+      color: #EBFBFF;
+      font-family: "Open Sans", sans-serif;
+      font-weight: 700;
+      height: 60px;
+      width: 300px;
+      border: 0px;
+      box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      letter-spacing: 0.05em;
+      font-size: 14px;
+
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 15px;
+    }
+
+    .right {
+      margin-left: auto;
+    }
+
+    footer {
+      background-color: #00252E;
+      padding: 150px 80px 40px 80px;
+    }
+
+
+    .row4 {
+      display: flex;
+      flex-direction: row;
+      /* justify-content: center; */
+      align-items: center;
+      width: 100%;
+    }
+
+    .col-1 {
+      width: 33%;
+      padding-right: 15px;
+    }
+
+    .col-1 .logo {
+      margin-bottom: 30px;
+    }
+
+    .loc {
+      display: -webkit-inline-box;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .loc img {
+      margin: 5px 20px 0 0;
+    }
+
+    .loc p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+    }
+
+    .col-2 {
+      width: 33%;
+      padding: 0px 15px;
+    }
+
+    .phone {
+      display: -webkit-inline-box;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .phone img {
+      margin: 5px 15px 0 0;
+    }
+
+    .phone p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    .col-3 {
+      width: 33%;
+      padding-left: 15px;
+      margin-top: -70px;
+    }
+
+    .email {
+      display: -webkit-inline-box;
+      width: 80%;
+      margin-bottom: 20px;
+    }
+
+    .email img {
+      margin: 5px 15px 0 0;
+    }
+
+    .email p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    .link {
+      display: flex;
+      width: 100%;
+    }
+
+    .about {
+      width: 50%;
+    }
+
+    .career {
+      width: 50%;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .about ul li {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    .career ul li {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+      margin-bottom: 15px;
+      cursor: pointer;
+    }
+
+    i.fa-brands.fa-facebook-f {
+      padding: 10px;
+      border: 1px solid #fff;
+      border-radius: 100px;
+      height: 35px;
+      width: 35px;
+      color: #fff;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    i.fa-brands.fa-facebook-f::before {
+      margin-left: 2px;
+    }
+
+    i.fa-brands.fa-twitter {
+      padding: 10px;
+      border: 1px solid #fff;
+      border-radius: 100px;
+      height: 35px;
+      width: 35px;
+      color: #fff;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    i.fa-brands.fa-instagram {
+      padding: 10px;
+      border: 1px solid #fff;
+      border-radius: 100px;
+      height: 35px;
+      width: 35px;
+      color: #fff;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .row5 p {
+      color: #fff;
+      font-size: 16px;
+      font-weight: 300;
+      text-align: right;
+    }
+
+    @media only screen and (max-width: 376px) {
+      .body {
+        background-color: #EBFBFF;
+        background-image: url(./images/bg-hero-mobile.svg);
+      }
+
+      header {
+        padding: 40px 20px;
+      }
+
+      .row1 {
+        width: 100%;
+        padding: 40px 20px;
+        /* display: flex; */
+        flex-direction: column;
+      }
+
+      .box1 {
+        padding: 0px;
+        width: 100%;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px;
+        align-items: center;
+      }
+
+      .left {
+        width: 50%;
+      }
+
+      .left img {
+        width: 100%;
+      }
+
+      .btn {
+        width: 120px;
+        height: 40px;
+      }
+
+      h1 {
+        font-size: 25px;
+        color: #00252E;
+        line-height: 1.5em;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        margin-bottom: 40px;
+        text-align: center;
+
+      }
+
+      p {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: "Open Sans", sans-serif;
+        line-height: 1.5em;
+        color: #00252E;
+        text-align: center;
+      }
+
+      .btn1 {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .ce {
+        /* margin: auto; */
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+      }
+
+      .box2 {
+        padding: 0px;
+        width: 100%;
+      }
+
+      .row2 {
+        padding: 100px 30px 100px 30px;
+        background-color: #fff;
+      }
+
+      .container1 {
+        padding: 30px 15px;
+        box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .container1 .col1 {
+        width: 100%;
+        padding: 0px;
+      }
+
+      h2 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+        margin-top: 30px;
+      }
+
+      .container2 {
+        padding: 30px 15px;
+        box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .container2 p {
+        color: #808D99;
+      }
+
+      .container3 {
+        padding: 30px 15px;
+        box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+
+      .container3 .col1 {
+        width: 100%;
+        padding: 0px;
+      }
+
+      .row3 {
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20px;
+      }
+
+      .container4 {
+        width: 100%;
+        padding: 50px 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+        margin-bottom: -80px;
+      }
+
+      .container4 h2 {
+        font-size: 24px;
+        color: #00252E;
+        line-height: 1.5em;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        text-align: center;
+        margin-bottom: 0px;
+        margin-top: 0px;
+      }
+
+      .center .btn1 {
+        cursor: pointer;
+        background-color: #FF52BF;
+        border-radius: 50px;
+        color: #EBFBFF;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        height: 50px;
+        width: 80%;
+        border: 0px;
+        box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.2);
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        letter-spacing: 0.05em;
+        font-size: 14px;
+      }
+
+      footer {
+        background-color: #00252E;
+        padding: 150px 20px 60px 20px;
+      }
+
+      .row4 {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        width: 100%;
+      }
+
+      .col-1 {
+        width: 100%;
+        padding-right: 15px;
+      }
+
+      .loc {
+        display: -webkit-inline-box;
+        width: 96%;
+        margin-bottom: 20px;
+      }
+
+      .loc p {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: left;
+      }
+
+      .col-2 {
+        width: 100%;
+        padding: 0px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      .link {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .col-3 {
+        width: 100%;
+        padding-left: 0px;
+        margin-top: 0px;
+      }
+
+      .social {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
+      .row5 p{
+        margin-top:30px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="row">
+      <div class="left"><img src="./images/logo.svg" alt=""></div>
+      <div class="right"><button class="btn">Try It Free</button></div>
+
+    </div>
+    </div>
+  </header>
+  <div class="row1">
+    <div class="box1">
+      <h1>Build The Community Your Fans Will Love</h1>
+      <p>Huddle re-imagines the way we build communities. You have a voice, but so does your audience.
+        Create connections with your users as you engage in genuine discussion. </p>
+      <div class="ce">
+        <button class="btn1">Get Started For Free</button>
+      </div>
+    </div>
+    <div class="box2">
+      <img src="./images/illustration-mockups.svg" alt="">
+    </div>
+  </div>
+  <div class="row2">
+    <div class="container1">
+      <div class="col1">
+        <h2>Grow Together</h2>
+        <p>
+          Generate meaningful discussions with your audience and build a strong, loyal community. Think of the
+          insightful conversations you miss out on with a feedback form.
+        </p>
+      </div>
+      <div class="col2">
+        <img src="./images/illustration-grow-together.svg" alt="">
+      </div>
+    </div>
+    <div class="container2">
+      <div class="col3">
+        <img src="./images/illustration-flowing-conversation.svg" alt="">
+      </div>
+      <div class="col1">
+        <h2>Flowing Conversations</h2>
+        <p>
+          You wouldn't paginate a conversation in real life, so why do it online? Our threads have just-in-time loading
+          for a more natural flow.
+        </p>
+      </div>
+    </div>
+    <div class="container3">
+      <div class="col1">
+        <h2>Your Users</h2>
+        <p>
+          It takes no time at all to integrate Huddle with your app's authentication solution. This means, once signed
+          in to your app, your users can start chatting immediately.
+        </p>
+      </div>
+      <div class="col2">
+        <img src="./images/illustration-your-users.svg" alt="">
+      </div>
+
+    </div>
+  </div>
+  <div class="row3">
+    <div class="container4">
+      <h2>Ready To Build Your Community?</h2>
+      <div class="center"><button class="btn1">Get Started For Free</button></div>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="row4">
+      <div class="col-1">
+        <img src="./images/svgexport-1 (2).svg" alt="" class="logo">
+        <div class="loc">
+          <img src="./images/icon-location.svg" alt="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua</p>
+
+        </div>
+        <div class="phone">
+          <img src="./images/icon-phone.svg" alt="">
+          <p>+1-543-123-4567</p>
+        </div>
+
+        <div class="email">
+          <img src="./images/icon-email.svg" alt="">
+          <p>example@huddle.com</p>
+        </div>
+
+      </div>
+      <div class="col-2">
+        <div class="link">
+          <div class="about">
+            <ul>
+              <li>About Us</li>
+              <li>What We Do</li>
+              <li>FAQ</li>
+            </ul>
+          </div>
+          <div class="career">
+            <ul>
+              <li>Career</li>
+              <li>Blog</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-3">
+        <div class="social">
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-twitter"></i>
+          <i class="fa-brands fa-instagram"></i>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row5">
+      <p> &copy; Copyright 2018 Huddle. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>
